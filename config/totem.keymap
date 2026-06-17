@@ -16,24 +16,25 @@
 
 / {
     behaviors {
-        hml: hml {
+        retro_tap: retro_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "HML";
+            label = "RETRO_TAP";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <50>;
+            tapping-term-ms = <0>;
             flavor = "hold-preferred";
+            retro-tap;
         };
 
-        hmr: hmr {
+        tap_unless_preferred: tap_unless_preferred {
             compatible = "zmk,behavior-hold-tap";
-            label = "HMR";
+            label = "TAP_UNLESS_PREFERRED";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <50>;
-            flavor = "hold-preferred";
+            tapping-term-ms = <100>;
+            flavor = "tap-unless-interrupted";
         };
 
         hold_layer_change: hold_layer_change {
@@ -45,6 +46,15 @@
             tapping-term-ms = <50>;
             flavor = "hold-preferred";
         };
+
+        hold_preferred: hold_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_PREFERRED";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <50>;
+        };
     };
 
     keymap {
@@ -52,10 +62,10 @@
 
         base {
             bindings = <
-             &kp Q           &kp W             &kp E        &kp R               &kp T    &kp Y        &kp U             &kp I          &kp O             &kp P
-             &mt LEFT_ALT A  &mt LEFT_SHIFT S  &mt LCTRL D  &mt LEFT_COMMAND F  &kp G    &kp H        &mt RIGHT_META J  &mt RCTRL K    &mt LEFT_SHIFT L  &mt RIGHT_ALT SEMI
-&mt ESC TAB  &kp Z           &kp X             &kp C        &kp V               &kp B    &kp N        &kp M             &kp COMMA      &kp DOT           &kp FSLH            &kp APOS
-                                               &kp LGUI     &mo 2               &mo 1    &lt 1 SPACE  &lt 2 ENTER       &kp BACKSPACE
+             &kp Q                  &kp W                    &kp E               &kp R                      &kp T    &kp Y        &kp U                               &kp I                          &kp O                               &kp P
+             &retro_tap LEFT_ALT A  &retro_tap LEFT_SHIFT S  &retro_tap LCTRL D  &retro_tap LEFT_COMMAND F  &kp G    &kp H        &tap_unless_preferred RIGHT_META J  &tap_unless_preferred RCTRL K  &tap_unless_preferred LEFT_SHIFT L  &tap_unless_preferred RIGHT_ALT SEMI
+&mt ESC TAB  &kp Z                  &kp X                    &kp C               &kp V                      &kp B    &kp N        &kp M                               &kp COMMA                      &kp DOT                             &kp FSLH                              &kp APOS
+                                                             &kp LGUI            &mo 2                      &mo 1    &lt 1 SPACE  &lt 2 ENTER                         &kp BACKSPACE
             >;
         };
 
