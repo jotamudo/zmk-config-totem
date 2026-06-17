@@ -23,7 +23,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <50>;
-            flavor = "tap-unless-interrupted";
+            flavor = "hold-preferred";
         };
 
         hmr: hmr {
@@ -33,7 +33,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <50>;
-            flavor = "tap-unless-interrupted";
+            flavor = "hold-preferred";
         };
 
         hold_layer_change: hold_layer_change {
@@ -43,7 +43,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <50>;
-            flavor = "tap-unless-interrupted";
+            flavor = "hold-preferred";
         };
     };
 
