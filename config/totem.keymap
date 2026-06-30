@@ -152,8 +152,8 @@
             require-prior-idle-ms = <25>;
         };
 
-        combo_shift_left {
-            bindings = <&kp LEFT_SHIFT>;
+        combo_ctrl_left {
+            bindings = <&kp LCTRL>;
             key-positions = <32 33>;
             timeout-ms = <25>;
             require-prior-idle-ms = <25>;
