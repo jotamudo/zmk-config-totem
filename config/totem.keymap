@@ -165,6 +165,13 @@
             timeout-ms = <25>;
             require-prior-idle-ms = <25>;
         };
+
+        combo_minus {
+            bindings = <&kp MINUS>;
+            key-positions = <8 9>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <25>;
+        };
     };
 
     keymap {
