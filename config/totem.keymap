@@ -85,32 +85,114 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        combo_esc {
+            bindings = <&kp ESC>;
+            key-positions = <0 1>;
+            layers = <0>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <25>;
+        };
+
+        combo_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <16 17 18>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <25>;
+        };
+
+        combo_left_parens {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <7 6>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <25>;
+        };
+
+        combo_right_parens {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <7 8>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <25>;
+        };
+
+        combo_left_bracket {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <16 17>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <25>;
+        };
+
+        combo_right_bracket {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <17 18>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <25>;
+        };
+
+        combo_left_brace {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <27 28>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <25>;
+        };
+
+        combo_right_brace {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <28 29>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <25>;
+        };
+
+        combo_tab {
+            bindings = <&kp TAB>;
+            key-positions = <11 12 13>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <25>;
+        };
+
+        combo_shift_left {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <32 33>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <25>;
+        };
+
+        combo_shift_right {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <37 36>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <25>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         base {
             bindings = <
-         &kp Q                       &kp W                  &kp E                     &kp R                         &kp T          &kp Y        &kp U                        &kp I                      &kp O                   &kp P
-         &homerow_left LEFT_SHIFT A  &homerow_left LCTRL S  &homerow_left LEFT_ALT D  &homerow_left LEFT_COMMAND F  &kp G          &kp H        &homerow_right RIGHT_META J  &homerow_right LEFT_ALT K  &homerow_right RCTRL L  &homerow_right LEFT_SHIFT SEMI
-&kp ESC  &kp Z                       &kp X                  &kp C                     &kp V                         &kp B          &kp N        &kp M                        &kp COMMA                  &kp DOT                 &kp FSLH                        &kp APOS
-                                                            &kp TAB                   &lt 2 ENTER                   &lt 1 SPACE    &lt 1 SPACE  &lt 2 ENTER                  &kp BACKSPACE
+           &kp Q                       &kp W                  &kp E                     &kp R                         &kp T          &kp Y        &kp U                        &kp I                      &kp O                   &kp P
+           &homerow_left LEFT_SHIFT A  &homerow_left LCTRL S  &homerow_left LEFT_ALT D  &homerow_left LEFT_COMMAND F  &kp G          &kp H        &homerow_right RIGHT_META J  &homerow_right LEFT_ALT K  &homerow_right RCTRL L  &homerow_right LEFT_SHIFT SEMI
+&kp GRAVE  &kp Z                       &kp X                  &kp C                     &kp V                         &kp B          &kp N        &kp M                        &kp COMMA                  &kp DOT                 &kp FSLH                        &kp APOS
+                                                              &kp LEFT_GUI              &mo 2                         &lt 1 SPACE    &lt 1 SPACE  &lt 2 ENTER                  &kp BACKSPACE
             >;
         };
 
         nav_num {
             bindings = <
-           &kp NUMBER_1     &kp NUMBER_2    &kp NUMBER_3  &kp NUMBER_4      &kp N5         &kp NUMBER_6    &kp N7          &kp N8        &kp N9                &kp N0
-           &kp LEFT_ALT     &kp LEFT_SHIFT  &kp LCTRL     &kp LEFT_COMMAND  &kp DELETE     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW       &kp EQUAL
-&kp GRAVE  &kp EXCLAMATION  &kp AT_SIGN     &kp HASH      &kp DOLLAR        &kp PERCENT    &kp CARET       &kp AMPERSAND   &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS
-                                            &trans        &trans            &trans         &trans          &trans          &trans
+           &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4      &kp N5           &kp NUMBER_6    &kp N7          &kp N8        &kp N9           &kp N0
+           &kp LEFT_SHIFT   &kp LCTRL     &kp LEFT_ALT  &kp LEFT_COMMAND  &kp BACKSPACE    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp EQUAL
+&kp GRAVE  &kp EXCLAMATION  &kp AT_SIGN   &kp HASH      &kp DOLLAR        &kp PERCENT      &kp CARET       &kp AMPERSAND   &kp ASTERISK  &kp DOT          &kp RIGHT_PARENTHESIS  &kp MINUS
+                                          &trans        &trans            &trans           &trans          &trans          &trans
             >;
         };
 
         sym_func {
             bindings = <
-           &kp ESC        &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp MINUS         &kp UNDERSCORE    &kp F1   &kp F2   &kp F3   &kp F4   &kp F5
+           &kp ESC        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS         &kp UNDERSCORE    &kp F1   &kp F2   &kp F3   &kp F4   &kp F5
            &kp TAB        &kp LBKT              &kp RBKT               &kp ENTER         &kp BSLH          &kp F6   &kp F7   &kp F8   &kp F9   &kp F10
-&kp GRAVE  &kp LESS_THAN  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN  &kp UNDERSCORE    &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &kp F16
+&kp GRAVE  &kp LESS_THAN  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp GREATER_THAN  &kp UNDERSCORE    &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &kp F16
                                                 &trans                 &trans            &trans            &trans   &trans   &trans
             >;
         };
@@ -124,11 +206,14 @@
             >;
         };
 
-        extra1 { status = "reserved"; };
-
-        extra2 { status = "reserved"; };
-
-        extra3 { status = "reserved"; };
+        layer_4 {
+            bindings = <
+        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
     };
 
     conditional_layers {
